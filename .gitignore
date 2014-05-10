@@ -1,0 +1,6 @@
+.bundle
+.ruby-version
+.DS_Store
+*.swp
+vendor/bundle
+log/

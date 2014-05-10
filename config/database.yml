@@ -1,0 +1,14 @@
+db:
+  production:
+    adapter:  mysql2
+    host:     localhost
+    username: hoge
+    password: hoge
+    database: hoge
+
+  development:
+    adapter:  mysql2
+    host:     localhost
+    username: <%= ENV['DATABASE_USERNAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+    database: <%= ENV['DATABASE_NAME']%>
