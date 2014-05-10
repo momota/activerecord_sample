@@ -9,6 +9,6 @@ db:
   development:
     adapter:  mysql2
     host:     localhost
-    username: <%= ENV['DATABASE_USERNAME'] %>
-    password: <%= ENV['DATABASE_PASSWORD'] %>
-    database: <%= ENV['DATABASE_NAME']%>
+    username: <%= ENV['DEV_DATABASE_USERNAME'] %>
+    password: <%= ENV['DEV_DATABASE_PASSWORD'] %>
+    database: <%= ENV['DEV_DATABASE_NAME']%>

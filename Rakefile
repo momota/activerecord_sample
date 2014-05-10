@@ -12,7 +12,7 @@ task :migrate => :environment do
 end
 
 task :environment do
-  db_conf = YAML.load( ERB.new( File.read("./config/database.yml") ).result )
+  db_conf = YAML.load( ERB.new( File.read("config/database.yml") ).result )
 
   # `rake ENV=development`/`rake ENV=production`で切り替え可能
   ActiveRecord::Base.establish_connection( db_conf["db"][ENV["ENV"]] )
