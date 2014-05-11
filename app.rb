@@ -13,9 +13,10 @@ ActiveRecord::Base.establish_connection(db_conf["db"]["development"])
 test_name = "momota.txt"
 test_url  = "http://momota.github.io/"
 
-rec = Hoges.find_or_create_by( url: test_url ) do |h|
+hoges = Hoges.find_or_create_by( url: test_url ) do |h|
   h.name = test_name
-  puts "すでにデータは insert 済みなのでここには入らない"
 end
 
-p rec
+puts "[before delete]record count: #{Hoges.count}"
+Hoges.delete_all(url: test_url)
+puts "[after delete] record count: #{Hoges.count}"
