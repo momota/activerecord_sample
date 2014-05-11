@@ -13,11 +13,14 @@ ActiveRecord::Base.establish_connection(db_conf["db"]["development"])
 test_name = "momota.txt"
 test_url  = "http://momota.github.io/"
 
-hoge = Hoges.new { |h|
-  h.name = test_name
-  h.url  = test_url
-}
-p hoge
-hoge.save
-p hoge
+rec = Hoges.find_by url: test_url
+unless rec
+  hoge = Hoges.new { |h|
+    h.name = test_name
+    h.url  = test_url
+  }
+  hoge.save
+  puts "すでにデータは insert 済みなのでここには入らない"
+end
 
+p rec
